@@ -3,8 +3,6 @@ import { FC } from 'react'
 import BubbleWrapper from './elements/Wrapper/BubbleWrapper'
 import CarouselWrapper from './elements/Wrapper/CarouselWrapper'
 
-import './flex.css'
-
 interface FlexMessageProps {
   payload: FlexMessage
 }
@@ -24,9 +22,9 @@ const FlexMessageObject: FC<FlexMessageProps> = ({ payload }) => {
     )
   } else if (payload.contents.type === 'bubble') {
     return (
-      <CarouselWrapper>
-        <BubbleWrapper payload={payload.contents} />
-      </CarouselWrapper>
+      // <CarouselWrapper>
+      <BubbleWrapper payload={payload.contents} />
+      // </CarouselWrapper>
     )
   }
 

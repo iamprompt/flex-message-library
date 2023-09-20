@@ -32,7 +32,11 @@ const SpanObject: FC<SpanObjectProps> = ({ payload }) => {
 
   // Style
   if (style) {
-    cssClasses = clsx(cssClasses, style === 'normal' && 'ExFntStyNml', style === 'italic' && 'ExFntStyIt')
+    cssClasses = clsx(
+      cssClasses,
+      style === 'normal' && 'ExFntStyNml',
+      style === 'italic' && 'ExFntStyIt',
+    )
   }
 
   // Decoration
@@ -41,7 +45,7 @@ const SpanObject: FC<SpanObjectProps> = ({ payload }) => {
       cssClasses,
       decoration === 'none' && 'ExTxtDecNone',
       decoration === 'underline' && 'ExTxtDecUl',
-      decoration === 'line-through' && 'ExTxtDecLt'
+      decoration === 'line-through' && 'ExTxtDecLt',
     )
   }
 

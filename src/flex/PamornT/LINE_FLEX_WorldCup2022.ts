@@ -424,6 +424,7 @@ const Metadata: IMetadata = {
   description: 'World Cup 2022 Scoreboard',
   flexMessage: WorldCup2022FlexMessage,
   source: {
+    type: 'github',
     githubUsername: 'PamornT',
   },
 }

@@ -119,6 +119,7 @@ const Metadata: IMetadata = {
   description: 'Menu',
   flexMessage: MenuFlexMessage,
   source: {
+    type: 'link',
     label: 'Menu',
     link: '',
   },

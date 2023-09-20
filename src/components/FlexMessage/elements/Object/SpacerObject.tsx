@@ -1,4 +1,4 @@
-import { FlexSeparator, FlexSpacer } from '@line/bot-sdk'
+import { FlexSpacer } from '@line/bot-sdk'
 import clsx from 'clsx'
 import { CSSProperties, FC } from 'react'
 import { SizeMapping } from '../../utils'

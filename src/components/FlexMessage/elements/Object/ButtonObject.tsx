@@ -1,4 +1,4 @@
-import { FlexButton, FlexIcon } from '@line/bot-sdk'
+import { FlexButton } from '@line/bot-sdk'
 import clsx from 'clsx'
 import { CSSProperties, FC } from 'react'
 import { SizeMapping, CapitalizeString } from '../../utils'
@@ -43,7 +43,7 @@ const ButtonObject: FC<ButtonObjectProps> = ({ payload }) => {
 
   // Position
   if (position) {
-    cssClasses = clsx(cssClasses, position && 'ExAbs')
+    cssClasses = clsx(cssClasses, position === 'absolute' && 'ExAbs')
   }
 
   // Height
@@ -64,7 +64,11 @@ const ButtonObject: FC<ButtonObjectProps> = ({ payload }) => {
 
   // Gravity
   if (gravity) {
-    cssClasses = clsx(cssClasses, ['bottom', 'center'].includes(gravity) && `grv${CapitalizeString(gravity, 1)}`)
+    cssClasses = clsx(
+      cssClasses,
+      ['bottom', 'center'].includes(gravity) &&
+        `grv${CapitalizeString(gravity, 1)}`,
+    )
   }
 
   // Color
@@ -76,7 +80,13 @@ const ButtonObject: FC<ButtonObjectProps> = ({ payload }) => {
   if (style) {
     cssClasses = clsx(
       cssClasses,
-      style === 'primary' ? 'ExBtn1' : style === 'secondary' ? 'ExBtn2' : style === 'link' ? 'ExBtnL' : 'ExBtnL'
+      style === 'primary'
+        ? 'ExBtn1'
+        : style === 'secondary'
+        ? 'ExBtn2'
+        : style === 'link'
+        ? 'ExBtnL'
+        : 'ExBtnL',
     )
   }
 

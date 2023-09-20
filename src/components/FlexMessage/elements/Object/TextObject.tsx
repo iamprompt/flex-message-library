@@ -48,7 +48,7 @@ const TextObject: FC<TextObjectProps> = ({ payload }) => {
 
   // Position
   if (position) {
-    cssClasses = clsx(cssClasses, position && 'ExAbs')
+    cssClasses = clsx(cssClasses, position === 'absolute' && 'ExAbs')
   }
 
   // Margin
@@ -67,7 +67,11 @@ const TextObject: FC<TextObjectProps> = ({ payload }) => {
 
   // Gravity
   if (gravity) {
-    cssClasses = clsx(cssClasses, ['bottom', 'center'].includes(gravity) && `grv${CapitalizeString(gravity, 1)}`)
+    cssClasses = clsx(
+      cssClasses,
+      ['bottom', 'center'].includes(gravity) &&
+        `grv${CapitalizeString(gravity, 1)}`,
+    )
   }
 
   // Size
@@ -89,7 +93,11 @@ const TextObject: FC<TextObjectProps> = ({ payload }) => {
 
   // Style
   if (style) {
-    cssClasses = clsx(cssClasses, style === 'normal' && 'ExFntStyNml', style === 'italic' && 'ExFntStyIt')
+    cssClasses = clsx(
+      cssClasses,
+      style === 'normal' && 'ExFntStyNml',
+      style === 'italic' && 'ExFntStyIt',
+    )
   }
 
   // Decoration
@@ -98,7 +106,7 @@ const TextObject: FC<TextObjectProps> = ({ payload }) => {
       cssClasses,
       decoration === 'none' && 'ExTxtDecNone',
       decoration === 'underline' && 'ExTxtDecUl',
-      decoration === 'line-through' && 'ExTxtDecLt'
+      decoration === 'line-through' && 'ExTxtDecLt',
     )
   }
 
@@ -144,7 +152,9 @@ const TextObject: FC<TextObjectProps> = ({ payload }) => {
   // Line Spacing
   if (lineSpacing) {
     if (lineSpacing.indexOf('px') > -1) {
-      cssStyles['lineHeight'] = `${parseInt(lineSpacing.replace('px', '')) + 15}px`
+      cssStyles['lineHeight'] = `${
+        parseInt(lineSpacing.replace('px', '')) + 15
+      }px`
     }
   }
 

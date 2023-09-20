@@ -134,6 +134,7 @@ const Metadata: IMetadata = {
   description: 'Hotel Flex Message',
   flexMessage: HotelFlexMessage,
   source: {
+    type: 'link',
     label: 'Hotel Flex Message',
     link: 'https://developers.line.biz/en/reference/messaging-api/#hotel',
   },

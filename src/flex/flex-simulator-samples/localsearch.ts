@@ -269,6 +269,7 @@ const Metadata: IMetadata = {
   description: 'Flex Message',
   flexMessage: LocalSearchFlexMessage,
   source: {
+    type: 'link',
     label: '',
     link: '',
   },

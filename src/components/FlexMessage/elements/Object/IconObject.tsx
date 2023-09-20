@@ -8,7 +8,17 @@ type IconObjectProps = {
 }
 
 const IconObject: FC<IconObjectProps> = ({ payload }) => {
-  const { margin, size, position, aspectRatio, url, offsetTop, offsetBottom, offsetStart, offsetEnd } = payload
+  const {
+    margin,
+    size,
+    position,
+    aspectRatio,
+    url,
+    offsetTop,
+    offsetBottom,
+    offsetStart,
+    offsetEnd,
+  } = payload
 
   const cssStyles: CSSProperties = {}
   const iconCssStyles: CSSProperties = {}
@@ -22,7 +32,8 @@ const IconObject: FC<IconObjectProps> = ({ payload }) => {
   // Aspect Ratio
   if (aspectRatio) {
     const ratioArray = aspectRatio.split(':')
-    const ratio = parseFloat(ratioArray[0] ?? '0') / parseFloat(ratioArray[1] ?? '0')
+    const ratio =
+      parseFloat(ratioArray[0] ?? '0') / parseFloat(ratioArray[1] ?? '0')
 
     iconCssStyles['width'] = `${ratio}em`
   } else {
@@ -31,7 +42,7 @@ const IconObject: FC<IconObjectProps> = ({ payload }) => {
 
   // Position
   if (position) {
-    cssClasses = clsx(cssClasses, position && 'ExAbs')
+    cssClasses = clsx(cssClasses, position === 'absolute' && 'ExAbs')
   }
 
   // Margin

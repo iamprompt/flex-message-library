@@ -1,5 +1,5 @@
 import { FlexContainer } from '@line/bot-sdk'
-import { IMetadata } from './types'
+import { IMetadata } from '../types'
 
 const TicketFlexMessage: FlexContainer = {
   type: 'bubble',
@@ -173,6 +173,7 @@ const Metadata: IMetadata = {
   description: 'Ticket',
   flexMessage: TicketFlexMessage,
   source: {
+    type: 'link',
     label: 'Ticket',
     link: '',
   },

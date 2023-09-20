@@ -292,6 +292,7 @@ const Metadata: IMetadata = {
   description: 'Boarding Pass',
   flexMessage: BoardingPassFlexMessage,
   source: {
+    type: 'github',
     githubUsername: 'sirateek',
   },
 }

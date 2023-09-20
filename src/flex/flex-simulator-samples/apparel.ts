@@ -272,6 +272,7 @@ const Metadata: IMetadata = {
   description: 'Carousel',
   flexMessage: ApparelFlexMessage,
   source: {
+    type: 'link',
     label: 'Carousel',
     link: 'https://developers.line.biz/en/reference/messaging-api/#carousel',
   },

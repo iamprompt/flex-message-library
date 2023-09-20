@@ -1,5 +1,5 @@
 import { FlexContainer } from '@line/bot-sdk'
-import { IMetadata } from './types'
+import { IMetadata } from '../types'
 
 const ToDoAppFlexMessage: FlexContainer = {
   type: 'carousel',
@@ -249,6 +249,7 @@ const Metadata: IMetadata = {
   description: 'A simple to do app',
   flexMessage: ToDoAppFlexMessage,
   source: {
+    type: 'link',
     label: 'Flex Message Simulator',
     link: 'https://developers.line.biz/en/docs/messaging-api/using-flex-messages/#flex-message-simulator',
   },

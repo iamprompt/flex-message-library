@@ -1,11 +1,13 @@
 import { FlexContainer } from '@line/bot-sdk'
 
 export type ISourceLink = {
+  type: 'link'
   label: string
   link: string
 }
 
 export type ISourceGithub = {
+  type: 'github'
   githubUsername: string
 }
 

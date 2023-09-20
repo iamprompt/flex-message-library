@@ -138,6 +138,7 @@ const Metadata: IMetadata = {
   description: 'Real Estate Flex Message',
   flexMessage: RealEstateFlexMessage,
   source: {
+    type: 'link',
     label: 'LINE Developers',
     link: '',
   },

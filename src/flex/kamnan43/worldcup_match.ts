@@ -1791,6 +1791,7 @@ const Metadata: IMetadata = {
   description: 'World Cup Match',
   flexMessage: WorldCupMatchFlexMessage,
   source: {
+    type: 'github',
     githubUsername: 'kamnan43',
   },
 }

@@ -48,7 +48,7 @@ const ImageObject: FC<ImageObjectProps> = ({ payload }) => {
 
   // Size
   if (size) {
-    if (size.indexOf('px') > -1) {
+    if (size.indexOf('px') > -1 || size.indexOf('%') > -1) {
       innerCssStyles['width'] = size
     } else {
       cssClasses = clsx(cssClasses, `Ex${SizeMapping(size)}`)
@@ -60,7 +60,9 @@ const ImageObject: FC<ImageObjectProps> = ({ payload }) => {
   let imagePadding = 100
   if (aspectRatio) {
     const ratioArray = aspectRatio.split(':')
-    imagePadding = (parseFloat(ratioArray[1] ?? '0') * 100) / parseFloat(ratioArray[0] ?? '0')
+    imagePadding =
+      (parseFloat(ratioArray[1] ?? '0') * 100) /
+      parseFloat(ratioArray[0] ?? '0')
   }
   imageWrapperStyles['paddingBottom'] = `${imagePadding}%`
 
@@ -76,7 +78,7 @@ const ImageObject: FC<ImageObjectProps> = ({ payload }) => {
 
   // Position
   if (position) {
-    cssClasses = clsx(cssClasses, position && 'ExAbs')
+    cssClasses = clsx(cssClasses, position === 'absolute' && 'ExAbs')
   }
 
   // Margin
@@ -95,7 +97,11 @@ const ImageObject: FC<ImageObjectProps> = ({ payload }) => {
 
   // Gravity
   if (gravity) {
-    cssClasses = clsx(cssClasses, ['bottom', 'center'].includes(gravity) && `grv${CapitalizeString(gravity, 1)}`)
+    cssClasses = clsx(
+      cssClasses,
+      ['bottom', 'center'].includes(gravity) &&
+        `grv${CapitalizeString(gravity, 1)}`,
+    )
   }
 
   // Offset Top

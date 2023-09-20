@@ -1,5 +1,5 @@
 import { FlexContainer } from '@line/bot-sdk'
-import { IMetadata } from './types'
+import { IMetadata } from '../types'
 
 const SocialFlexMessage: FlexContainer = {
   type: 'bubble',
@@ -119,6 +119,7 @@ const Metadata: IMetadata = {
   description: 'Social',
   flexMessage: SocialFlexMessage,
   source: {
+    type: 'link',
     label: 'Social',
     link: 'https://developers.line.biz/en/reference/messaging-api/#social',
   },

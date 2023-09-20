@@ -1,5 +1,5 @@
 import { FlexContainer } from '@line/bot-sdk'
-import { IMetadata } from './types'
+import { IMetadata } from '../types'
 
 const ReceiptFlexMessage: FlexContainer = {
   type: 'bubble',
@@ -220,6 +220,7 @@ const Metadata: IMetadata = {
   description: 'A receipt example',
   flexMessage: ReceiptFlexMessage,
   source: {
+    type: 'link',
     label: 'View on GitHub',
     link: '',
   },

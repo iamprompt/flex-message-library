@@ -1,5 +1,5 @@
 import { FlexContainer } from '@line/bot-sdk'
-import { IMetadata } from './types'
+import { IMetadata } from '../types'
 
 const RestaurantFlexMessage: FlexContainer = {
   type: 'bubble',
@@ -160,6 +160,7 @@ const Metadata: IMetadata = {
   description: 'Restaurant',
   flexMessage: RestaurantFlexMessage,
   source: {
+    type: 'link',
     label: '',
     link: '',
   },

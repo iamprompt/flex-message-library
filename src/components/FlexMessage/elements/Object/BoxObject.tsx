@@ -46,13 +46,13 @@ const BoxObject: FC<BoxObjectProps> = ({ payload }) => {
       cssClasses,
       layout === 'baseline' && ['hr', 'bl'],
       layout === 'vertical' && ['vr'],
-      layout === 'horizontal' && ['hr']
+      layout === 'horizontal' && ['hr'],
     )
   }
 
   // Position
   if (position) {
-    cssClasses = clsx(cssClasses, position && 'ExAbs')
+    cssClasses = clsx(cssClasses, position === 'absolute' && 'ExAbs')
   }
 
   // Flex
@@ -117,7 +117,7 @@ const BoxObject: FC<BoxObjectProps> = ({ payload }) => {
         borderWidth === 'normal' && 'ExBdrWdtNml',
         borderWidth === 'medium' && 'ExBdrWdtMdm',
         borderWidth === 'semi-bold' && 'ExBdrWdtSbd',
-        borderWidth === 'bold' && 'ExBdrWdtBld'
+        borderWidth === 'bold' && 'ExBdrWdtBld',
       )
     }
   }
@@ -140,7 +140,7 @@ const BoxObject: FC<BoxObjectProps> = ({ payload }) => {
       justifyContent === 'flex-end' && 'itms-jfcE',
       justifyContent === 'space-between' && 'itms-jfcSB',
       justifyContent === 'space-around' && 'itms-jfcSA',
-      justifyContent === 'space-evenly' && 'itms-jfcSE'
+      justifyContent === 'space-evenly' && 'itms-jfcSE',
     )
   }
 
@@ -150,7 +150,7 @@ const BoxObject: FC<BoxObjectProps> = ({ payload }) => {
       cssClasses,
       alignItems === 'center' && 'itms-algC',
       alignItems === 'flex-start' && 'itms-algS',
-      alignItems === 'flex-end' && 'itms-algE'
+      alignItems === 'flex-end' && 'itms-algE',
     )
   }
 
@@ -238,13 +238,21 @@ const BoxObject: FC<BoxObjectProps> = ({ payload }) => {
   // Background
   if (background) {
     if (background.type === 'linearGradient') {
-      const { angle, startColor, endColor, centerColor, centerPosition = '50%' } = background
+      const {
+        angle,
+        startColor,
+        endColor,
+        centerColor,
+        centerPosition = '50%',
+      } = background
       if (centerColor) {
         cssStyles[
           'background'
         ] = `linear-gradient(${angle}, ${startColor} 0%, ${centerColor} ${centerPosition}, ${endColor} 100%)`
       } else {
-        cssStyles['background'] = `linear-gradient(${angle}, ${startColor} 0%, ${endColor} 100%)`
+        cssStyles[
+          'background'
+        ] = `linear-gradient(${angle}, ${startColor} 0%, ${endColor} 100%)`
       }
     }
   }

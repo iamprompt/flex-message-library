@@ -1,5 +1,5 @@
 import { FlexContainer } from '@line/bot-sdk'
-import { IMetadata } from './types'
+import { IMetadata } from '../types'
 
 const ShoppingFlexMessage: FlexContainer = {
   type: 'carousel',
@@ -184,6 +184,7 @@ const Metadata: IMetadata = {
   description: 'A carousel of items for sale',
   flexMessage: ShoppingFlexMessage,
   source: {
+    type: 'link',
     label: 'Shopping',
     link: 'https://developers.line.biz/en/reference/messaging-api/#flex-message',
   },

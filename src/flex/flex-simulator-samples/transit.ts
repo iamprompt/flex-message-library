@@ -1,5 +1,5 @@
 import { FlexContainer } from '@line/bot-sdk'
-import { IMetadata } from './types'
+import { IMetadata } from '../types'
 
 const TransitFlexMessage: FlexContainer = {
   type: 'bubble',
@@ -320,6 +320,7 @@ const Metadata: IMetadata = {
   description: 'Flex Message',
   flexMessage: TransitFlexMessage,
   source: {
+    type: 'link',
     label: 'Flex Message Simulator',
     link: 'https://developers.line.biz/flex-simulator/',
   },
